@@ -10,7 +10,7 @@ namespace MvOrders.Infrastructure.Interfaces
         IList<PedidoEntity> Get();
         PedidoEntity Get(Guid Id);
         PedidoEntity Create(PedidoEntity entity);
-        void Update(Guid Id, PedidoEntity entity);
-        void Delete(int Id);
+        //void Update(Guid Id, PedidoEntity entity);
+        //void Delete(int Id);
     }
 }

@@ -11,7 +11,7 @@ namespace MvOrders.Api.Interfaces
         List<PedidoDto> Get();
         PedidoDto Get(Guid Id);
         PedidoDto Create(PedidoDto entity);
-        void Update(Guid Id, PedidoDto entity);
-        void Delete(Guid Id);
+        //void Update(Guid Id, PedidoDto entity);
+        //void Delete(Guid Id);
     }
 }

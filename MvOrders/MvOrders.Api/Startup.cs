@@ -12,7 +12,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using MvOrders.Api.Interfaces;
+using MvOrders.Api.services;
 using MvOrders.Infrastructure;
+using MvOrders.Infrastructure.Interfaces;
+using MvOrders.Infrastructure.Repositories;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace MvOrders.Api
@@ -37,14 +41,14 @@ namespace MvOrders.Api
                 c.SwaggerDoc("v1", new Info
                 {
                     Version = "v1",
-                    Title = "ToDo API",
-                    Description = "A simple example ASP.NET Core Web API",
+                    Title = "Zitro API",
+                    Description = "API para pruebas curso NetCore",
                     TermsOfService = "None",
                     Contact = new Contact
                     {
-                        Name = "Shayne Boyer",
-                        Email = string.Empty,
-                        Url = "https://twitter.com/spboyer"
+                        Name = "Oswaldo Ortiz",
+                        Email = "oro8528@gmail.com",
+                        Url = "https://zitro.tech/"
                     },
                     License = new License
                     {
@@ -59,6 +63,14 @@ namespace MvOrders.Api
                 c.IncludeXmlComments(xmlPath);
             });
 
+
+            #region Repositories
+            services.AddScoped<IProductoRepository, ProductoRepository>();
+            #endregion
+            #region Services
+            services.AddScoped<IProductoService, ProductoService>();
+            #endregion
+
             #region EntityFramework
 
             string connectionString = Configuration.GetConnectionString("MovilVentasDB");
@@ -71,6 +83,8 @@ namespace MvOrders.Api
                   }));
 
             #endregion
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -8,7 +8,7 @@ namespace MvOrders.Api.Dtos
 {
     public class ProductoDto
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public String Nombre { get; set; }
         public double Precio { get; set; }
 
