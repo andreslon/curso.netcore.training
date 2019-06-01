@@ -11,6 +11,7 @@ namespace MvOrders.Api.Dtos
         public String Usuario { get; set; }
         public DateTime FechaPedido { get; set; }
         public double Total { get; set; }
-                                                   
+        public List<DetallePedidoDto> DetallePedido { get; set; }
+
     }
 }
